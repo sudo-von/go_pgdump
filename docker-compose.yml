@@ -1,0 +1,21 @@
+version: "3.1"
+
+services:
+  pg_dump:
+    build:
+      context: .
+      dockerfile: dockerfile
+    restart: on-failure
+    volumes:
+      - ./files:/go/src/app/files
+    environment:
+      REMOTE_PORT: 5432
+      REMOTE_HOST: test
+      REMOTE_USER: test
+      REMOTE_NAME: test
+      REMOTE_PASSWORD: test
+      LOCAL_PORT: 5432
+      LOCAL_HOST: test
+      LOCAL_USER: test
+      LOCAL_NAME: test
+      LOCAL_PASSWORD: test
